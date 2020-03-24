@@ -11,4 +11,9 @@ class Account
   def make_deposit(sum)
     @balance = @balance + sum
   end
+
+  def withdraw(sum)
+    @balance = @balance - sum
+  end
+
 end
