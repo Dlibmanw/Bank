@@ -1,5 +1,5 @@
 class Account
-
+  attr_reader :balance
   def initialize(balance=0)
     @balance = balance
   end
@@ -8,8 +8,9 @@ class Account
     @balance
   end
 
-  def make_deposit(sum)
-    @balance = @balance + sum
+  def make_deposit(sum, type)
+    transaction = Transaction.new(sum, type)
+    @balance = @balance + transaction.create[:sum]
   end
 
   def withdraw(sum)
