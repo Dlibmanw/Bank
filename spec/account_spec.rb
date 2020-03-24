@@ -8,4 +8,12 @@ describe 'Account' do
     end
   end
 
+  describe 'make deposit' do
+    it 'allows a client to add money to an account' do
+      account = Account.new 
+      account.make_deposit(10)
+      expect(account.show_balance).to eq 10
+    end
+  end
+
 end

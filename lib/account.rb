@@ -7,4 +7,8 @@ class Account
   def show_balance
     @balance
   end
+
+  def make_deposit(sum)
+    @balance = @balance + sum
+  end
 end
