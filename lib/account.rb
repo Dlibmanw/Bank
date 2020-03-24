@@ -13,8 +13,9 @@ class Account
     @balance = @balance + transaction.create[:sum]
   end
 
-  def withdraw(sum)
-    @balance = @balance - sum
+  def withdraw(sum, type)
+    transaction = Transaction.new(sum, type)
+    @balance = @balance - transaction.create[:sum]
   end
 
 end

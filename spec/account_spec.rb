@@ -20,7 +20,7 @@ describe 'Account' do
   describe 'withdraw' do
     it 'allows a client to withdraw money from an account' do
       account = Account.new(15) 
-      account.withdraw(5)
+      account.withdraw(5, "withdraw")
       expect(account.show_balance).to eq 10
     end
   end
