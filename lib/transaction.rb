@@ -1,13 +1,10 @@
 class Transaction
 
+    attr_reader :sum, :type, :date
+
   def initialize(sum, type)
     @sum = sum
     @type = type
-    @time = Date.today
+    @date = Date.today
   end
-
-  def create
-    {:sum => @sum, :type => @type, :time => Date.today}
-  end
-
 end

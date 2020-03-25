@@ -10,12 +10,14 @@ class Account
 
   def make_deposit(sum, type)
     transaction = Transaction.new(sum, type)
-    @balance = @balance + transaction.create[:sum]
+    bankstatement = BankStatement.new
+    @balance = @balance + transaction.sum
+    bankstatement.add_activity(Date.today, sum, @balance)
   end
 
   def withdraw(sum, type)
     transaction = Transaction.new(sum, type)
-    @balance = @balance - transaction.create[:sum]
+    @balance = @balance - transaction.sum
   end
 
 end

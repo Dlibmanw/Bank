@@ -1,11 +1,13 @@
+require './lib/bank_statement.rb'
 require './lib/transaction.rb'
 
-describe 'Transaction' do
-
-  describe 'create' do
-    it 'allows a user to create a new transaction' do
-      transaction = Transaction.new(150, "deposit")
-      expect(transaction.create).to eq({:sum => 150, :type => "deposit", :time => Date.today})
+describe 'BankStatement' do
+  describe 'add_activity' do
+    it 'returns a list of account activities' do
+      account = Account.new
+      transaction = Transaction.new(200, "deposit")
+      bank_statment = BankStatement.new
+      expect(bank_statment.add_activity(Date.today, 200, 200)).to eq ["#{Date.today} || 200 || || 200"] 
     end
   end
 end
