@@ -1,3 +1,4 @@
+require 'date'
 class Transaction
 
     attr_reader :sum, :type, :date
