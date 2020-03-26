@@ -32,6 +32,10 @@ I want to be able to print a bank statement
 
 Account <-- print_bank_statement --> bankStatement
 
+Program description
+
+The program allows a user to open a new Account. On instantiation of an account, it will have a balance of 0 and a new instant of the BankStatement class, which will be used in order to present a record of all made transactions. The bank statement will show dates of each action and an up-to-date account balance. The account has a set of methods that allow a user to make a deposit, make a withdrawal and also print out a bank statement.
+
 Installation
 
 To clone the repo
