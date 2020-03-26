@@ -65,7 +65,7 @@ $ rspec
 Interaction
 
 irb
-
+```
 $ require './lib/account.rb'
 
 $ require './lib/bank_statement.rb'
@@ -79,3 +79,4 @@ $ account.make_deposit(600, "deposit")
 $ account.withdraw(200, "withdraw")
 
 $ account.print_bank_statement
+```
