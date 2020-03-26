@@ -1,8 +1,8 @@
 class Account
-  attr_reader :balance, :transactions
+  attr_reader :balance, :transactions, :bank_statement
   def initialize(balance=0)
     @balance = balance
-    @transactions = []
+    @transactions = ["Date || Credit || Debit || Balance\n"]
     @bank_statement = BankStatement.new(@transactions)
   end
 
@@ -11,25 +11,23 @@ class Account
   end
 
   def make_deposit(sum, type)
-    create_transaction(sum, type)
+    # create_transaction(sum, type)
     @balance += sum
+    update_bank_statement(sum, @balance, type)
   end
 
   def withdraw(sum, type)
-    create_transaction(sum, type)
+    # create_transaction(sum, type)
     @balance -= sum
+    update_bank_statement(sum, @balance, type)
   end
 
-  def create_transaction(sum, type)
-    @transactions << Transaction.new(sum, type)
-  end
 
-  def update_bank_statement(date, sum, balance)
-    @bank_statement.add_activity(date, sum, balance)
+  def update_bank_statement(sum, balance, type)
+    @bank_statement.add_activity(sum, balance, type)
   end
 
   def print_bank_statement
-    @bank_statement.header
     @bank_statement.print
   end
 
